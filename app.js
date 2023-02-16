@@ -3,7 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
-const port = 3000
+const port = process.env.PORT || 9001
 const bodyParser = require('body-parser')
 const _ = require('lodash')
 
@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'))
 
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://localhost:27017/todolistDB')
+mongoose.connect('mongodb+srv://admin-angela:123@cluster0.9ykoiev.mongodb.net/?retryWrites=true&w=majority')
 
 
 const itemsSchema = {name: String}
